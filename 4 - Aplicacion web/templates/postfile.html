@@ -1,0 +1,10 @@
+<html>
+<body>
+{% if form %}
+<form method="post" action="." enctype="multipart/form-data">
+    {{ form.as_p }}
+    <input type="submit" value="Send"/>
+</form>
+{% endif %}
+</body>
+</html>

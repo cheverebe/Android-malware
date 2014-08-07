@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/lightbox.css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/lightbox.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="container">
+        <div class="row">
+            <div class="span8">
+    {% for object in object_list %}
+                <div style="float: left;padding: 2px;">
+                    <a href="{{ object.file.url }}" data-lightbox="{{ object.pk }}">
+                        <img style="max-height: 80px;max-width: 300px" src="{{ object.file.url }}">
+                    </a>
+                </div>
+    {% endfor %}
+            </div>
+        </div>
+</div>
+</body>
+</html>
